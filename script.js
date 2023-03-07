@@ -1,6 +1,7 @@
 let randNum = 0;
 let playerGuess = 0;
 let guessesAllowed = 7;
+
 let guessesLeft = 7;
 let guessOrGuesses = 'guesses';
 let penalty = 0;
@@ -14,8 +15,8 @@ guessBtn.addEventListener('click', evalGuess);
 let guessBox = document.querySelector('input');
 
 let feedback = document.getElementById('feedback');
-let totGamesSpan = document.getElementById('tot-games-span');
-let guessAvgSpan = document.getElementById('guess-avg-span');
+const totGamesSpan = document.getElementById('tot-games-span');
+const guessAvgSpan = document.getElementById('guess-avg-span');
 let totGames = Number(totGamesSpan.innerHTML);
 let guessAvg = Number(guessAvgSpan.innerHTML);
 
@@ -77,12 +78,19 @@ function evalGuess() {
 }
 
 function resetGame() {
+    playerGuess = 0;
     guessesLeft = 7;
-    guessBtn.style.display = 'none';
-    guessBox.style.display = 'none';
-    playBtn.style.display = 'block';
-    playBtn.textContent = 'PLAY AGAIN';
     guessBox.value = 0;
+    guessBox.style.display = "none"; // show the GUESS button
+    guessBtn.style.display = "none";
+    playBtn.style.display = "inline-block";
+    playBtn.textContent = "PLAY AGAIN";
+    // update footer (Games Played and Guess Average)
+    gamesPlayed++;
+    guessAvg = totalGuesses / gamesPlayed;
+    // output (Games Played and Guess Average) to footer
+    totGamesSpan.textContent = gamesPlayed;
+    guessAvgSpan.textContent = guessAvg.toFixed(2);
 }
 
 // The updateScoreResetGame function is called when the player guesses correctly or when the player runs out of guesses. The function updates the score and resets all the values. 
