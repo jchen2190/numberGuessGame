@@ -30,11 +30,8 @@ function playGame() {
 
     scoreBox.style.opacity = 1;
 }
-    
-
 
 function evalGuess() {
-
     playerGuess = Number(guessBox.value);
     guessesLeft--;
     if(guessesLeft == 1) {
@@ -50,7 +47,6 @@ function evalGuess() {
         } else {
             feedback.innerHTML = `<p>Congrats! The mystery number is ${randNum}! <br>You got it in ${7-guessesLeft} guesses</p>`;
         }
-        
         updateScoreResetGame();
         return;
     }
@@ -59,7 +55,6 @@ function evalGuess() {
         feedback.innerHTML = '<p>Nope! You are out of guesses!<br>GAME OVER! 2 guess penalty!</p>';
         penalty = 2;
         resetGame();
-        // updateScoreResetGame();
         return;
     }
 }
@@ -86,7 +81,6 @@ function updateScoreResetGame() {
     guessesAvg = totGuesses / totGames;
     totGamesSpan.innerHTML = totGames;
     guessAvgSpan.innerHTML = guessesAvg.toFixed(3);
-
     guessesLeft = 7;
     guessBtn.style.display = 'none';
     guessBox.style.display = 'none';
