@@ -36,7 +36,8 @@ function evalGuess() {
     guessesLeft--;
     if(guessesLeft == 1) {
         guessOrGuesses = 'guess';
-    } 
+    }
+    
     if (playerGuess < randNum) {
         feedback.innerHTML = `<p>Your guess is too low! <br>You have ${guessesLeft} ${guessOrGuesses} left!</p>`;
     } else if (playerGuess > randNum) {
@@ -90,6 +91,3 @@ function updateScoreResetGame() {
     guessOrGuesses = 'guesses';
     penalty = 0;
 }
-
-
-   

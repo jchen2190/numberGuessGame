@@ -1,8 +1,7 @@
 # Number Guessing Game
-
+![screenshot](./images/screenshot.png)
 
 ## Game Info
-
 The game runs when the user clicks the PLAY button.
 
 - Guess the number between 1 - 100
@@ -10,5 +9,8 @@ The game runs when the user clicks the PLAY button.
 - User gets 7 guesses in total
 - Reset upon correct answer or 7 guesses
 
-## Deployment
+## Technologies
+This project is run on javascript.
 
+## Deployment
+Go to [https://jchen2190.github.io/numberGuessGame/](https://jchen2190.github.io/numberGuessGame/)
